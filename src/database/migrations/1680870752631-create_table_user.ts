@@ -12,6 +12,9 @@ export class createTableUser1680870752631 implements MigrationInterface {
                 name varchar NOT NULL,
                 email  varchar NOT NULL,
                 password  varchar NOT NULL,
+                cpf varchar UNIQUE NOT NULL,
+                numero_cel NOT NULL,
+                dt_nasc date NOT NULL,
                 create_at timestamp NOT NULL DEFAULT now(),
                 update_at timestamp NOT NULL DEFAULT now(),
                 deleted_at timestamp NULL,
@@ -19,6 +22,7 @@ export class createTableUser1680870752631 implements MigrationInterface {
               );
     
               CREATE UNIQUE INDEX user_email_idx ON acesso.user USING btree (email)
+              CREATE UNIQUE INDEX user_cpf_idx ON acesso.user USING btree (cpf)
               
             `);
   }
