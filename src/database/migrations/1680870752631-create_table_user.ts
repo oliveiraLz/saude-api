@@ -9,7 +9,7 @@ export class createTableUser1680870752631 implements MigrationInterface {
               
               CREATE TABLE acesso.user (
                 id uuid DEFAULT uuid_generate_v4() NOT NULL,
-                 varchar NOT NULL,
+                name varchar NOT NULL,
                 email  varchar NOT NULL,
                 password  varchar NOT NULL,
                 cpf varchar UNIQUE NOT NULL,
