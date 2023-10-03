@@ -3,8 +3,8 @@ import { MigrationInterface, QueryRunner } from "typeorm";
 export class insertAdmin1681132465371 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     queryRunner.query(`
-        INSERT INTO acesso."user" (id,"name",email,"password",create_at,update_at,deleted_at) VALUES
-         ('396d9a96-1b7c-429c-b9d2-a453b733df90','admin','admin@ipdec.org','$2b$06$83nN9rPUcBPHgZcTqwSPheEJubg2fOYmIhhmpQJQZaO.eb7eTNyra','2023-04-10 08:09:22.990622','2023-04-10 08:09:22.990622',NULL);
+        INSERT INTO acesso."user" (id,"name",email,"password",cpf,genero,numero_cel, dt_nasc,create_at,update_at,deleted_at) VALUES
+         ('396d9a96-1b7c-429c-b9d2-a453b733df90','admin','admin@saude.com','$2a$12$430gn3pqH1QiEl8Xz1DyBORNH6uvrwrRX3wMbvblyx0RwBAFTT4xG','000.000.000-00','Masculino','0000000000','2023-04-10 08:09:22.990622','2023-04-10 08:09:22.990622','2023-04-10 08:09:22.990622',NULL);
     
         INSERT INTO acesso."group" (id,"name",create_at,update_at,deleted_at) VALUES
          ('0bbca75e-3dd6-4d36-932f-03dfed7bfd42','Administrador','2023-04-10 08:09:27.827741','2023-04-10 08:09:27.827741',NULL);

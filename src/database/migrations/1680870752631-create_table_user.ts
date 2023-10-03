@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner } from 'typeorm';
+import { MigrationInterface, QueryRunner } from "typeorm";
 
 export class createTableUser1680870752631 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -13,17 +13,17 @@ export class createTableUser1680870752631 implements MigrationInterface {
                 email  varchar NOT NULL,
                 password  varchar NOT NULL,
                 cpf varchar UNIQUE NOT NULL,
-                numero_cel NOT NULL,
+                numero_cel varchar NOT NULL,
                 dt_nasc date NOT NULL,
+                genero varchar NOT NULL,
                 create_at timestamp NOT NULL DEFAULT now(),
                 update_at timestamp NOT NULL DEFAULT now(),
                 deleted_at timestamp NULL,
                 primary key (id)
               );
     
-              CREATE UNIQUE INDEX user_email_idx ON acesso.user USING btree (email)
-              CREATE UNIQUE INDEX user_cpf_idx ON acesso.user USING btree (cpf)
-              
+              CREATE UNIQUE INDEX user_email_idx ON acesso.user USING btree (email);
+              CREATE UNIQUE INDEX user_cpf_idx ON acesso.user USING btree (cpf);
             `);
   }
 

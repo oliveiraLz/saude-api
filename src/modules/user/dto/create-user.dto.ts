@@ -18,6 +18,14 @@ export class CreateUserDto {
   // @Matches(RegExHelper.password, { message: MessagesHelper.PASSWORD_VALID })   // Validação para colocar caracteres no Email
   password: string;
 
+  @ApiProperty({ description: "Cpf do usuário" })
+  @IsNotEmpty({
+    message: "CPF não pode estar vazio",
+  })
+  cpf: string;
+
+  @ApiProperty({ description: "Número de celular do usuário" })
+  @IsNotEmpty({ message: "O número de celular do usuário deve ser preenchido" })
   @ApiProperty({ description: "Grupo do usuário" })
   @IsArray()
   @IsString({
