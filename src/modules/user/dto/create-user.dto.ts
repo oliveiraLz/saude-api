@@ -26,6 +26,14 @@ export class CreateUserDto {
 
   @ApiProperty({ description: "Número de celular do usuário" })
   @IsNotEmpty({ message: "O número de celular do usuário deve ser preenchido" })
+  numero_cel: string;
+
+  @IsNotEmpty()
+  dt_nasc: Date;
+
+  @IsNotEmpty()
+  genero: string;
+
   @ApiProperty({ description: "Grupo do usuário" })
   @IsArray()
   @IsString({
